@@ -1,0 +1,16 @@
+{
+  "name": "chunks",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@serenityjs/core": "^0.8.10",
+    "baltica": "^0.1.7"
+  }
+}
