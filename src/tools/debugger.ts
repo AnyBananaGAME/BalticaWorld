@@ -2,7 +2,7 @@ import { Logger } from "@sanctumterra/raknet";
 import { TextPacket, TextPacketType, Vector3f } from "@serenityjs/protocol";
 import type { Client } from "baltica";
 import fs from "fs";
-import type { World } from "../world";
+import type { World } from "../world/world";
 import type { Physics } from "../physics/physics";
 import { BlockIdentifier, BlockPermutation } from "@serenityjs/core";
 
@@ -45,12 +45,20 @@ export class Debugger {
     if (packet.needsTranslation) {
       packet.buffer = Buffer.from([0]);
       fs.writeFileSync(
-        process.cwd() + "/translations/" + Date.now() + ".txt",
+        process.cwd() + "/translations/" + Date.now() + ".json",
         JSON.stringify(packet)
       );
       return Logger.error("Transation is not implemented.", packet);
     }
     Logger.chat(packet.message);
+
+    if (packet.source === this.client.username) return;
+    if (packet.message.includes("sneak")) {
+      this.sendMessage("Sneaking ig");
+      this.physics.controls.sneak = !this.physics.controls.sneak;
+      return;
+    }
+
     const x = packet.message.split(" ")[0] as string;
     const y = packet.message.split(" ")[1] as string;
     const z = packet.message.split(" ")[2] as string;

@@ -1,0 +1,12 @@
+{
+  "buffer": { "type": "Buffer", "data": [0] },
+  "offset": 58,
+  "type": 2,
+  "needsTranslation": true,
+  "source": null,
+  "message": "death.attack.indirectMagic",
+  "parameters": ["Qo5k", "%entity.witch.name"],
+  "xuid": "",
+  "platformChatId": "",
+  "filtered": ""
+}

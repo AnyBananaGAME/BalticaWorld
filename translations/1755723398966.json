@@ -1,0 +1,12 @@
+{
+  "buffer": { "type": "Buffer", "data": [0] },
+  "offset": 31,
+  "type": 2,
+  "needsTranslation": true,
+  "source": null,
+  "message": "death.attack.drown",
+  "parameters": ["Qo5k"],
+  "xuid": "",
+  "platformChatId": "",
+  "filtered": ""
+}

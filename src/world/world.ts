@@ -12,15 +12,16 @@ import type { Client } from "baltica";
 import { Chunk } from "./chunks/Chunk";
 import { BlockPalette, BlockPermutation, SubChunk } from "@serenityjs/core";
 import { BinaryStream } from "@serenityjs/binarystream";
+import type { Player } from "../player";
 
 export class World {
   public chunks: Map<string, Chunk>;
 
-  constructor(public client: Client) {
+  constructor(public player: Player) {
     this.chunks = new Map();
-    client.on("LevelChunkPacket", this.onLevelChunkPacket.bind(this));
-    client.on("SubChunkPacket", this.onSubChunkPacket.bind(this));
-    client.on("UpdateBlockPacket", this.onUpdateBlockPacket.bind(this));
+    player.client.on("LevelChunkPacket", this.onLevelChunkPacket.bind(this));
+    player.client.on("SubChunkPacket", this.onSubChunkPacket.bind(this));
+    player.client.on("UpdateBlockPacket", this.onUpdateBlockPacket.bind(this));
   }
 
   public setChunk(chunk: Chunk) {
@@ -106,7 +107,7 @@ export class World {
         request.position = new SignedBlockPosition(packet.x, 0, packet.z);
         request.offsets = offsets;
         const serialized = request.serialize();
-        this.client.send(serialized);
+        this.player.client.send(serialized);
       }
     }
   }

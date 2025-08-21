@@ -1,0 +1,12 @@
+{
+  "buffer": { "type": "Buffer", "data": [0] },
+  "offset": 46,
+  "type": 2,
+  "needsTranslation": true,
+  "source": null,
+  "message": "death.attack.player",
+  "parameters": ["Qo5k", "AnyBananaGAME"],
+  "xuid": "",
+  "platformChatId": "",
+  "filtered": ""
+}

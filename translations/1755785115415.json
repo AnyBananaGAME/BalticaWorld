@@ -1,0 +1,12 @@
+{
+  "buffer": { "type": "Buffer", "data": [0] },
+  "offset": 40,
+  "type": 2,
+  "needsTranslation": true,
+  "source": null,
+  "message": "death.fell.accident.generic",
+  "parameters": ["Qo5k"],
+  "xuid": "",
+  "platformChatId": "",
+  "filtered": ""
+}
