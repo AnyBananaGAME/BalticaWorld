@@ -11,7 +11,7 @@ export class Player {
 
   constructor() {
     this.client = new Client({
-      address: "193.180.211.84",
+      address: "",
     });
     this.world = new World(this);
     this.physics = new Physics(this);
