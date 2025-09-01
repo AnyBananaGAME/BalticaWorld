@@ -4,7 +4,7 @@ import { InputDataLogger, logInputData } from "./utils/input-data-logger.js";
 
 const bridge = new Bridge({
   destination: {
-    address: "193.180.211.84",
+    address: "",
     port: 19132,
   },
 });
